@@ -43,12 +43,15 @@
             target.style.backgroundColor = "pink";
         })
 
-        let boxAll = document.querySelectorAll('.box');
-        boxAll.style.backgroundColor = "red";
+        let boxAll = document.querySelectorAll('div.box');
+        
 
         let reset = document.querySelector("#reset");
         reset.addEventListener('click',()=>{
             console.log("working");
+            boxAll.forEach((square) => {
+                square.style.backgroundColor = "black";
+            })
         })
     </script>
 </body>
