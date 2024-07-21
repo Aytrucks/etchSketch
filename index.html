@@ -48,7 +48,9 @@
             if(drag){
                 let target = event.target;
                 console.log("hovered");
-                target.style.backgroundColor = "pink";
+                if(target.getAttribute("class") === "box"){
+                    target.style.backgroundColor = "pink";
+                }
             }
         });
         container.addEventListener('mouseup', () => {
