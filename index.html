@@ -27,8 +27,8 @@
         newDiv.classList.add("box");
         container.appendChild(newDiv);
 
-        for(let i = 0;i < 16;i++){
-            for(let j = 0;j < 16;j++){
+        for(let i = 0;i < 13;i++){
+            for(let j = 0;j < 13;j++){
                 newDiv.classList.add("box");
                 container.appendChild(newDiv);
 
@@ -48,10 +48,27 @@
 
         let reset = document.querySelector("#reset");
         reset.addEventListener('click',()=>{
-            console.log("working");
+            boxAll.forEach((square)=> {
+                square.remove();
+            })
+
+            let size = Number(prompt("How large would you like your square grid to be?"));
+            
+            for(let i = 0;i < size;i++){
+            for(let j = 0;j < size;j++){
+                newDiv.classList.add("box");
+                container.appendChild(newDiv);
+
+                newDiv = document.createElement("div");
+                newDivText = document.createTextNode(".");
+                newDiv.appendChild(newDivText);
+                }
+            }
+            boxAll = document.querySelectorAll('div.box');
             boxAll.forEach((square) => {
                 square.style.backgroundColor = "black";
             })
+            document.querySelector(".container").style.maxWidth = size*29 + "px";
         })
     </script>
 </body>

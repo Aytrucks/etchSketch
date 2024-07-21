@@ -10,7 +10,10 @@ body{
 
 .container{
     display: flex;
-    max-width: 464px;
+    /* 
+    Account for square width by multiplying boxes by 29 
+    */
+    max-width: calc(14px * 29);
     flex-wrap: wrap;
 }
 
