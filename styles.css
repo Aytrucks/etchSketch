@@ -13,13 +13,14 @@ body{
     /* 
     Account for square width by multiplying boxes by 29 
     */
-    max-width: calc(14px * 29);
+    max-width: calc(16px * 29);
     flex-wrap: wrap;
 }
 
 .box{
     border: 2px solid black;
     width: 25px;
+    height: 25px;
 }
 
 .box:hover{

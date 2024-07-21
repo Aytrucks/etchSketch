@@ -19,7 +19,7 @@
         let container = document.querySelector('.container');
 
         let newDiv = document.createElement("div");
-        let newDivText = document.createTextNode(".");
+        let newDivText = document.createTextNode("");
         newDiv.appendChild(newDivText);
         
         //console.log(newDiv.textContent);
@@ -27,21 +27,34 @@
         newDiv.classList.add("box");
         container.appendChild(newDiv);
 
-        for(let i = 0;i < 13;i++){
-            for(let j = 0;j < 13;j++){
+        for(let i = 0;i < 16;i++){
+            for(let j = 0;j < 16;j++){
                 newDiv.classList.add("box");
                 container.appendChild(newDiv);
 
                 newDiv = document.createElement("div");
-                newDivText = document.createTextNode(".");
+                newDivText = document.createTextNode("");
                 newDiv.appendChild(newDivText);
             }
         }
-        container.addEventListener('mouseover',(event)=>{
-            let target = event.target;
-            console.log("hovered");
-            target.style.backgroundColor = "pink";
-        })
+
+        let drag = false;
+        container.addEventListener('mousedown',()=>{
+            drag = true;
+            console.log(drag);
+        });
+
+        container.addEventListener('mousemove',(event)=>{
+            if(drag){
+                let target = event.target;
+                console.log("hovered");
+                target.style.backgroundColor = "pink";
+            }
+        });
+        container.addEventListener('mouseup', () => {
+            drag = false;
+            }  
+        );
 
         let boxAll = document.querySelectorAll('div.box');
         
@@ -60,7 +73,7 @@
                 container.appendChild(newDiv);
 
                 newDiv = document.createElement("div");
-                newDivText = document.createTextNode(".");
+                newDivText = document.createTextNode("");
                 newDiv.appendChild(newDivText);
                 }
             }
@@ -68,7 +81,7 @@
             boxAll.forEach((square) => {
                 square.style.backgroundColor = "black";
             })
-            document.querySelector(".container").style.maxWidth = size*29 + "px";
+            //document.querySelector(".container").style.maxWidth = size*29 + "px";
         })
     </script>
 </body>
