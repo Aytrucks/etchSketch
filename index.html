@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etch-a-Sketch! (T.O.P.)</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Welcome to Etch-a-Sketch on Browser!</h1>
+    <button id="reset">Reset</button>
+    <div class="container">
     
+    </div>
+    
+    <script>
+        console.log("test");
+
+        let container = document.querySelector('.container');
+
+        let newDiv = document.createElement("div");
+        let newDivText = document.createTextNode(".");
+        newDiv.appendChild(newDivText);
+        
+        //console.log(newDiv.textContent);
+
+        newDiv.classList.add("box");
+        container.appendChild(newDiv);
+
+        for(let i = 0;i < 16;i++){
+            for(let j = 0;j < 16;j++){
+                newDiv.classList.add("box");
+                container.appendChild(newDiv);
+
+                newDiv = document.createElement("div");
+                newDivText = document.createTextNode(".");
+                newDiv.appendChild(newDivText);
+            }
+        }
+        container.addEventListener('mouseover',(event)=>{
+            let target = event.target;
+            console.log("hovered");
+            target.style.backgroundColor = "pink";
+        })
+
+        let boxAll = document.querySelectorAll('.box');
+        boxAll.style.backgroundColor = "red";
+
+        let reset = document.querySelector("#reset");
+        reset.addEventListener('click',()=>{
+            console.log("working");
+        })
+    </script>
 </body>
 </html>
