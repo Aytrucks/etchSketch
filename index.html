@@ -54,13 +54,25 @@
             drag = true;
             console.log(drag);
         });
-
+        let jumbo = 100;
+        reverse = true;
+        //35 causes problems
         container.addEventListener('mousemove',(event)=>{
             if(drag){
                 let target = event.target;
                 console.log("hovered");
                 if(target.getAttribute("class") === "box"){
-                    target.style.backgroundColor = "pink";
+                    target.style.backgroundColor = "rgb(" + jumbo + ",130,238)";
+                    if(jumbo === 255 || jumbo === 0){
+                        reverse = !(reverse);
+                    }
+                
+                    if(reverse){
+                        jumbo += 1;
+                    }
+                    else{
+                        jumbo -= 1;
+                    }
                 }
             }
         });
