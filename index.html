@@ -81,9 +81,12 @@
             }
             boxAll = document.querySelectorAll('div.box');
             boxAll.forEach((square) => {
-                square.style.backgroundColor = "black";
+                square.style.backgroundColor = "white";
+                square.style.width = (960/size) + "px";
+                square.style.height = (960/size) + "px";
+                
             })
-            //document.querySelector(".container").style.maxWidth = size*29 + "px";
+            
         })
     </script>
 </body>
